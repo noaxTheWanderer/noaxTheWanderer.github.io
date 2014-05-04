@@ -4,7 +4,8 @@ title: Life of The Wanderer
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
-    
+
+<!--
 ## Posts History
 
 <ul class="posts">
@@ -12,6 +13,7 @@ tagline: Supporting tagline
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
+-->
 
 ## I am passionate about
 
