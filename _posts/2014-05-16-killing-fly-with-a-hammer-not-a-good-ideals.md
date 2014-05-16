@@ -4,6 +4,7 @@ title: "Killing a fly with a hammer!<br /> NOT A GOOD IDEA!!"
 description: "exiftool"
 category: linux, exiftool
 tags: [linux, exiftool]
+comments: false
 ---
 {% include JB/setup %}
 
@@ -18,18 +19,11 @@ Now that I needed my specific dates during the trip, I realized that using cp/ m
 
 I thought to myself, it might be a good idea if I could have folders in format such as:
 
-  <ul>
-    <li>2012</li>
-    <li>
-	  <ul><li>2012_May_17</li></ul>
-    </li>
-    <li>2014</li>
-    <li>
-      <ul>
-	<li>2014_January_23</li>
-      </ul>
-    </li>
-  </ul>
+      2012
+	    2012_May_17
+      2014
+	    2014_January_23
+	    2014_March_14
 
 
   When a folder has a specific date as name, it is a very useful piece of information, hence when I do a clumsy cp/ mv then folder names will be my guide in the future.
@@ -38,12 +32,12 @@ I thought to myself, it might be a good idea if I could have folders in format s
 So I thought a script might be a good thing to automate such a job.
 
 Well its easy, the script could perform the following tasks:
-  Get SD Source
-  Get Destination
-  Check if both Source/ Destination are empty and are also valid directories
-  then loop though the files to find the date of creation
-  create the directories
-  then loop through files again use `cp -r :SOURCE :DESTINATION` to copy the files.
+    Get SD Source
+    Get Destination
+    Check if both Source/ Destination are empty and are also valid directories
+    then loop though the files to find the date of creation create the directories
+    then loop through files again use to copy from source to destination
+	`cp -r :SOURCE :DESTINATION`
 
   Then Who-la!! You are done.
 
@@ -54,7 +48,7 @@ Well its easy, the script could perform the following tasks:
 
   So I started searching around stackexchange, since it is the only place I visit when I get doubt or questions or need to learn about anything.
 
-  Then I came across one questions about "Rename JPG files according to date created" link: http://stackoverflow.com/questions/4710753/rename-jpg-files-according-to-date-created
+  Then I came across one questions about ["Rename JPG files according to date created"](http://stackoverflow.com/questions/4710753/rename-jpg-files-according-to-date-created)
 
 One of the answers proposed to use EXIFTOOL to copy when playing with image files.
 
@@ -64,13 +58,13 @@ it was the perfect tool..
 
 So my script was reduced from being 50 lines to simply less than 2 lines and looked as follows:
 
-exiftool -r -d ${DESTINATION_DIRECTORY}/%Y_%B_%d/%%f.%%e "-filename<filemodifydate" ${SD_CARD_PATH}
+    `exiftool -r -d ${DESTINATION_DIRECTORY}/%Y_%B_%d/%%f.%%e "-filename<filemodifydate" ${SD_CARD_PATH}`
 
 One more point, is that I did not know each image has embedded more information details.
 
 Through EXIFTOOL I could see on which date the image was taken.
 
-exiftool -d '%r %a, %B %e, %Y' -DateTimeOriginal -ext JPG .
+`exiftool -d '%r %a, %B %e, %Y' -DateTimeOriginal -ext JPG . `
 
 The above commands simply outputs Original Creation from meta-data for all files with extension of JPG in current directory. ( Beware . in after the JPG) 
 
