@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Life of The Wanderer
-tagline: Supporting tagline
+tagline: Homepage
 ---
 {% include JB/setup %}
 
