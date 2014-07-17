@@ -3,7 +3,7 @@ layout: post
 category : learning
 tagline: "Supporting tagline"
 tags : [mooc, coursera, entrepreneurship]
-comments: false
+comments: true
 ---
 {% include JB/setup %}
 

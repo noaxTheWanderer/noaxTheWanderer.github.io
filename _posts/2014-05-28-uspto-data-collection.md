@@ -3,7 +3,7 @@ title: "Dealing with USPTO Patents Data for Application and Grants"
 layout: post
 tagline: "Linux xml tools xslt"
 tags : linux
-comments: false
+comments: true
 category: Linux, xml_pp, xml_grep, xsltproc, dtd
 ---
 {% include JB/setup %}
