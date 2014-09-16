@@ -1,12 +1,11 @@
 ---
 layout: post
+title: "Silent Agust: The FIFTH DISCIPLINE"
 category : lessons
 tagline: "The Learning Organization"
 tags : [leadership, organization, management]
 ---
 {% include JB/setup %}
-
-# Silent Agust: The FIFTH DISCIPLINE
 
 Lately, I have been trying to build a culture of reading. So far my goal has been to read at least one book a month. I have kept my goal and it feels very good. The more I read, the more I learn, the more I grow.
 
